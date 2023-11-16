@@ -1,0 +1,56 @@
+###
+### A complete description of a Prefect Deployment for flow 'etlParentFlow'
+###
+name: Parameter ETL
+description: null
+version: 47aa342a46e2d38274272c810ef51d60
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {"color": "yellow","year": 2021,"months": [1,2,3]}
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etlParentFlow
+manifest_path: null
+storage: null
+path: D:\CODING\dataEngineering\2_DOCKER_SQL
+entrypoint: 02_gcp\parameterFlow.py:etlParentFlow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    color:
+      title: color
+      default: yellow
+      position: 0
+      type: string
+    year:
+      title: year
+      default: 2021
+      position: 1
+      type: integer
+    months:
+      title: months
+      default:
+      - 1
+      - 2
+      position: 2
+      type: array
+      items:
+        type: integer
+  required: null
+  definitions: null
